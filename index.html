@@ -48,74 +48,28 @@
     }
 
     /* ── HEADER ── */
-    .header {
-      text-align: center;
-      margin-bottom: 52px;
-      animation: fadeDown 0.7s ease both;
-    }
+    .header { text-align: center; margin-bottom: 52px; animation: fadeDown 0.7s ease both; }
 
-    .logo-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
+    .logo-line { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 14px; }
 
     .logo-badge {
-      width: 46px;
-      height: 46px;
-      background: var(--purple);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 16px;
-      color: #fff;
-      letter-spacing: 0.5px;
-      flex-shrink: 0;
-      box-shadow: 0 4px 14px rgba(59,42,110,0.3);
-      text-align: center;
-      line-height: 1.1;
+      width: 46px; height: 46px; background: var(--purple); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: #fff;
+      letter-spacing: 0.5px; flex-shrink: 0; box-shadow: 0 4px 14px rgba(59,42,110,0.3);
+      text-align: center; line-height: 1.1;
     }
 
-    .org-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(22px, 4.5vw, 36px);
-      letter-spacing: 3px;
-      color: var(--purple);
-      line-height: 1;
-    }
+    .org-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 4.5vw, 36px); letter-spacing: 3px; color: var(--purple); line-height: 1; }
+    .form-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 7vw, 60px); letter-spacing: 4px; color: var(--purple-mid); line-height: 1; margin-top: 6px; }
 
-    .form-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(36px, 7vw, 60px);
-      letter-spacing: 4px;
-      color: var(--purple-mid);
-      line-height: 1;
-      margin-top: 6px;
-    }
-
-    .divider {
-      width: 64px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      margin: 18px auto 0;
-      border-radius: 2px;
-    }
+    .divider { width: 64px; height: 3px; background: linear-gradient(90deg, transparent, var(--accent), transparent); margin: 18px auto 0; border-radius: 2px; }
 
     /* ── SECTION CARDS ── */
     .section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px 28px 24px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow);
-      animation: fadeUp 0.55s ease both;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px 28px 24px; margin-bottom: 24px; box-shadow: var(--shadow); animation: fadeUp 0.55s ease both;
     }
-
     .section:nth-child(1) { animation-delay: 0.05s; }
     .section:nth-child(2) { animation-delay: 0.10s; }
     .section:nth-child(3) { animation-delay: 0.15s; }
@@ -126,203 +80,61 @@
     .section:nth-child(8) { animation-delay: 0.40s; }
     .section:nth-child(9) { animation-delay: 0.45s; }
 
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 22px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--purple-pale);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
-    }
-
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
-      letter-spacing: 2.5px;
-      color: var(--purple);
-      text-transform: uppercase;
-    }
-
-    .section-desc {
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-top: 2px;
-      font-weight: 400;
-      line-height: 1.4;
-    }
-
-    .section-num {
-      margin-left: auto;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      color: var(--purple-border);
-      letter-spacing: 1px;
-    }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .section-icon { width: 38px; height: 38px; background: var(--purple-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2.5px; color: var(--purple); text-transform: uppercase; }
+    .section-desc { font-size: 12px; color: var(--text-soft); margin-top: 2px; font-weight: 400; line-height: 1.4; }
+    .section-num { margin-left: auto; font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--purple-border); letter-spacing: 1px; }
 
     /* ── GRIDS ── */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-    @media (max-width: 560px) {
-      .grid-2 { grid-template-columns: 1fr; }
-      .section { padding: 22px 18px 20px; }
-    }
+    @media (max-width: 560px) { .grid-2 { grid-template-columns: 1fr; } .section { padding: 22px 18px 20px; } }
 
     /* ── FIELDS ── */
     .field { display: flex; flex-direction: column; gap: 6px; }
     .mb16  { margin-bottom: 16px; }
 
-    label {
-      font-size: 11px;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      font-weight: 600;
-    }
-
+    label { font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-mid); font-weight: 600; }
     label .req { color: var(--accent); margin-left: 2px; }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"] {
-      background: var(--surface-alt);
-      border: 1.5px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      padding: 11px 14px;
-      outline: none;
-      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-      width: 100%;
-      appearance: none;
-      -webkit-appearance: none;
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
+      background: var(--surface-alt); border: 1.5px solid var(--border); border-radius: 8px;
+      color: var(--text); font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 400;
+      padding: 11px 14px; outline: none; transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      width: 100%; appearance: none; -webkit-appearance: none;
     }
-
-    input:focus {
-      border-color: var(--accent);
-      background: #fff;
-      box-shadow: 0 0 0 3px rgba(108,79,212,0.12);
-    }
-
+    input:focus { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 3px rgba(108,79,212,0.12); }
     input::placeholder { color: var(--text-soft); opacity: 0.7; }
-
-    input[type="date"]::-webkit-calendar-picker-indicator {
-      opacity: 0.5;
-      cursor: pointer;
-      filter: invert(0.3) sepia(1) saturate(3) hue-rotate(230deg);
-    }
+    input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0.5; cursor: pointer; filter: invert(0.3) sepia(1) saturate(3) hue-rotate(230deg); }
 
     /* ── FIELD ERRORS ── */
-    .field-error {
-      font-size: 11px;
-      color: var(--error);
-      margin-top: 1px;
-      display: none;
-      font-weight: 500;
-    }
-
+    .field-error { font-size: 11px; color: var(--error); margin-top: 1px; display: none; font-weight: 500; }
     .field.invalid input { border-color: var(--error); background: #fff5f5; }
     .field.invalid .field-error { display: block; }
 
     /* ── UPLOAD BOX ERRORS ── */
-    .upload-box.upload-required-error .upload-label {
-      border-color: var(--error);
-      background: #fff5f5;
-    }
-
-    .upload-error-msg {
-      font-size: 11px;
-      color: var(--error);
-      font-weight: 500;
-      margin-top: 6px;
-      display: none;
-      text-align: center;
-    }
-
-    .upload-box.upload-required-error + .upload-error-msg,
-    .upload-required-error ~ .upload-error-msg {
-      display: block;
-    }
-
-    .upload-group-error {
-      font-size: 11px;
-      color: var(--error);
-      font-weight: 500;
-      margin-top: 8px;
-      display: none;
-    }
-
+    .upload-box.upload-required-error .upload-label { border-color: var(--error); background: #fff5f5; }
+    .upload-group-error { font-size: 11px; color: var(--error); font-weight: 500; margin-top: 8px; display: none; }
     .upload-group-error.visible { display: block; }
 
     /* ── UPLOAD BOXES ── */
     .upload-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .upload-grid-1 { display: grid; grid-template-columns: 1fr; gap: 12px; }
-
     @media (max-width: 480px) { .upload-grid-2 { grid-template-columns: 1fr; } }
 
     .upload-box { position: relative; }
-
-    .upload-box input[type="file"] {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-    }
+    .upload-box input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; z-index: 2; }
 
     .upload-label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      border: 1.5px dashed var(--purple-border);
-      border-radius: 10px;
-      padding: 22px 14px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.2s;
-      min-height: 100px;
-      background: var(--surface-alt);
-      position: relative;
-      z-index: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+      border: 1.5px dashed var(--purple-border); border-radius: 10px; padding: 22px 14px;
+      text-align: center; cursor: pointer; transition: all 0.2s; min-height: 100px;
+      background: var(--surface-alt); position: relative; z-index: 1;
     }
-
-    .upload-box:hover .upload-label {
-      border-color: var(--accent);
-      background: var(--purple-pale);
-    }
-
-    .upload-box.has-file .upload-label {
-      border-color: var(--success);
-      background: #f0faf5;
-      border-style: solid;
-    }
-
+    .upload-box:hover .upload-label { border-color: var(--accent); background: var(--purple-pale); }
+    .upload-box.has-file .upload-label { border-color: var(--success); background: #f0faf5; border-style: solid; }
     .upload-label .upload-icon { font-size: 24px; }
-    .upload-label .upload-tag {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-mid);
-      font-weight: 600;
-    }
+    .upload-label .upload-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid); font-weight: 600; }
     .upload-label .upload-sub { font-size: 10px; color: var(--text-soft); }
     .upload-label .upload-filename { font-size: 11px; color: var(--success); word-break: break-all; font-weight: 500; }
     .upload-box.has-file .upload-icon { display: none; }
@@ -330,220 +142,75 @@
     .check-icon { display: none; font-size: 22px; }
 
     /* ── INFO NOTE ── */
-    .info-note {
-      background: var(--purple-pale);
-      border: 1px solid var(--purple-border);
-      border-radius: 8px;
-      padding: 11px 14px;
-      font-size: 12px;
-      color: var(--text-mid);
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-
+    .info-note { background: var(--purple-pale); border: 1px solid var(--purple-border); border-radius: 8px; padding: 11px 14px; font-size: 12px; color: var(--text-mid); margin-bottom: 16px; line-height: 1.5; }
     .info-note strong { color: var(--purple); font-weight: 600; }
 
     /* ── SUBMIT ── */
-    .submit-area {
-      margin-top: 36px;
-      text-align: center;
-      animation: fadeUp 0.6s 0.5s ease both;
-    }
-
+    .submit-area { margin-top: 36px; text-align: center; animation: fadeUp 0.6s 0.5s ease both; }
     .btn-submit {
-      background: var(--purple);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 3px;
-      padding: 18px 64px;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-shadow: 0 4px 20px rgba(59,42,110,0.3);
+      background: var(--purple); color: #fff; border: none; border-radius: 10px;
+      font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 3px;
+      padding: 18px 64px; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 20px rgba(59,42,110,0.3);
     }
-
-    .btn-submit:hover {
-      background: var(--purple-mid);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(59,42,110,0.35);
-    }
-
+    .btn-submit:hover { background: var(--purple-mid); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(59,42,110,0.35); }
     .btn-submit:active  { transform: translateY(0); }
     .btn-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 
+    /* ── LOADING OVERLAY ── */
+    .loading-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(30, 21, 48, 0.7); backdrop-filter: blur(4px);
+      z-index: 200; align-items: center; justify-content: center;
+    }
+    .loading-overlay.visible { display: flex; }
+    .loading-box {
+      background: #fff; border-radius: 20px; padding: 48px 40px;
+      text-align: center; max-width: 360px; width: 100%;
+      box-shadow: 0 24px 64px rgba(59,42,110,0.22);
+    }
+    .loading-spinner {
+      width: 52px; height: 52px; border: 4px solid var(--purple-pale);
+      border-top-color: var(--purple); border-radius: 50%;
+      animation: spin 0.8s linear infinite; margin: 0 auto 24px;
+    }
+    .loading-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 2px; color: var(--purple); margin-bottom: 8px; }
+    .loading-sub { font-size: 13px; color: var(--text-soft); }
+
     /* ── CONFIRMATION MODAL ── */
     .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(30, 21, 48, 0.55);
-      backdrop-filter: blur(4px);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      display: none; position: fixed; inset: 0;
+      background: rgba(30, 21, 48, 0.55); backdrop-filter: blur(4px);
+      z-index: 100; align-items: center; justify-content: center; padding: 24px;
     }
-
     .modal-overlay.visible { display: flex; }
-
     .modal-box {
-      background: #fff;
-      border-radius: 20px;
-      padding: 44px 36px 36px;
-      max-width: 480px;
-      width: 100%;
-      text-align: center;
+      background: #fff; border-radius: 20px; padding: 44px 36px 36px;
+      max-width: 480px; width: 100%; text-align: center;
       box-shadow: 0 24px 64px rgba(59,42,110,0.22);
       animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
-
     .modal-check {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--purple);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      margin: 0 auto 24px;
-      box-shadow: 0 8px 24px rgba(59,42,110,0.28);
+      width: 72px; height: 72px; border-radius: 50%; background: var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; margin: 0 auto 24px; box-shadow: 0 8px 24px rgba(59,42,110,0.28);
     }
-
-    .modal-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      letter-spacing: 3px;
-      color: var(--purple);
-      margin-bottom: 14px;
-    }
-
-    .modal-body {
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
+    .modal-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 3px; color: var(--purple); margin-bottom: 14px; }
+    .modal-body { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
     .modal-body strong { color: var(--purple); }
-
-    .modal-contacts {
-      background: var(--purple-pale);
-      border: 1px solid var(--purple-border);
-      border-radius: 10px;
-      padding: 14px 18px;
-      font-size: 14px;
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-
-    .modal-contacts .contact-label {
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-soft);
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .modal-contacts a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .modal-close {
-      background: var(--purple);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 17px;
-      letter-spacing: 2px;
-      padding: 13px 40px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
+    .modal-contacts { background: var(--purple-pale); border: 1px solid var(--purple-border); border-radius: 10px; padding: 14px 18px; font-size: 14px; color: var(--text-mid); line-height: 1.8; margin-bottom: 28px; }
+    .modal-contacts .contact-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-soft); font-weight: 600; margin-bottom: 6px; }
+    .modal-contacts a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .modal-close { background: var(--purple); color: #fff; border: none; border-radius: 8px; font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 2px; padding: 13px 40px; cursor: pointer; transition: background 0.2s; }
     .modal-close:hover { background: var(--purple-mid); }
 
-    /* ── SPINNER ── */
-    .spinner {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(255,255,255,0.35);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-      margin-right: 8px;
-      vertical-align: middle;
-    }
+    /* ── SPINNER (button) ── */
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.35); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; margin-right: 8px; vertical-align: middle; }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes popIn {
-      from { opacity: 0; transform: scale(0.88); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-    
-    /* ── LOADING OVERLAY ── */
-.loading-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(30, 21, 48, 0.7);
-  backdrop-filter: blur(4px);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
-}
-
-.loading-overlay.visible { display: flex; }
-
-.loading-box {
-  background: #fff;
-  border-radius: 20px;
-  padding: 48px 40px;
-  text-align: center;
-  max-width: 360px;
-  width: 100%;
-  box-shadow: 0 24px 64px rgba(59,42,110,0.22);
-}
-
-.loading-spinner {
-  width: 52px;
-  height: 52px;
-  border: 4px solid var(--purple-pale);
-  border-top-color: var(--purple);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-  margin: 0 auto 24px;
-}
-
-.loading-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
-  letter-spacing: 2px;
-  color: var(--purple);
-  margin-bottom: 8px;
-}
-
-.loading-sub {
-  font-size: 13px;
-  color: var(--text-soft);
-}
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp   { from { opacity: 0; transform: translateY(16px);  } to { opacity: 1; transform: translateY(0); } }
+    @keyframes spin     { to { transform: rotate(360deg); } }
+    @keyframes popIn    { from { opacity: 0; transform: scale(0.88); } to { opacity: 1; transform: scale(1); } }
   </style>
 </head>
 <body>
@@ -553,9 +220,7 @@
   <div class="header">
     <div class="logo-line">
       <div class="logo-badge">EISP</div>
-      <div>
-        <div class="org-name">Edmonton International Street Performers</div>
-      </div>
+      <div><div class="org-name">Edmonton International Street Performers</div></div>
       <div class="logo-badge">EISP</div>
     </div>
     <div class="form-title">Onboarding Form</div>
@@ -575,7 +240,6 @@
         </div>
         <div class="section-num">01</div>
       </div>
-
       <div class="grid-2 mb16">
         <div class="field" id="field-firstName">
           <label>First Name <span class="req">*</span></label>
@@ -612,7 +276,6 @@
         </div>
         <div class="section-num">02</div>
       </div>
-
       <div class="grid-2 mb16">
         <div class="field" id="field-ssiaNum">
           <label>Security License # <span class="req">*</span></label>
@@ -625,7 +288,6 @@
           <span class="field-error">Expiry date is required</span>
         </div>
       </div>
-
       <div class="info-note">
         📸 <strong>Tip:</strong> Lay your license flat on a light surface and take a clear, well-lit photo. Both sides must be fully visible and readable. Accepted: JPG, PNG, PDF (max 10 MB each).
       </div>
@@ -666,7 +328,6 @@
         </div>
         <div class="section-num">03</div>
       </div>
-
       <div class="info-note">
         📄 <strong>How to submit:</strong> Fill out the Employee Data Sheet you were provided (paper or PDF), sign it, and upload a clear photo or scanned copy below. Accepted: JPG, PNG, PDF (max 10 MB).
       </div>
@@ -696,7 +357,6 @@
         </div>
         <div class="section-num">04</div>
       </div>
-
       <div class="info-note">
         💳 <strong>Upload ONE of the following:</strong> a void cheque, your bank's direct deposit form, or the employee direct deposit form provided to you. Any one of the three is accepted. Accepted formats: JPG, PNG, PDF (max 10 MB).
       </div>
@@ -726,7 +386,6 @@
         </div>
         <div class="section-num">05</div>
       </div>
-
       <div class="info-note">
         ✍️ <strong>Sign and upload:</strong> Review the Code of Conduct provided to you, sign it, and upload a clear photo or scanned copy below. Accepted: JPG, PNG, PDF (max 10 MB).
       </div>
@@ -756,11 +415,10 @@
         </div>
         <div class="section-num">06</div>
       </div>
-
       <div class="info-note">
         📸 <strong>Photo tip:</strong> If submitting photos of your paper form, upload the <strong>front</strong> and <strong>back</strong> separately below. If you have a completed PDF, upload it in the Front slot — one file is enough. Accepted: JPG, PNG, PDF (max 10 MB per file).
       </div>
-      <div class="upload-grid-2" id="group-td1ab">
+      <div class="upload-grid-2">
         <div class="upload-box" id="upload-td1ab-front">
           <input type="file" id="file-td1ab-front" name="file_td1ab_front" accept=".pdf,.jpg,.jpeg,.png"
             onchange="handleFile(this,'upload-td1ab-front','name-td1ab-front','err-td1ab')"/>
@@ -797,7 +455,6 @@
         </div>
         <div class="section-num">07</div>
       </div>
-
       <div class="info-note">
         📸 <strong>Photo tip:</strong> If submitting photos of your paper form, upload the <strong>front</strong> and <strong>back</strong> separately below. If you have a completed PDF, upload it in the Front slot — one file is enough. Accepted: JPG, PNG, PDF (max 10 MB per file).
       </div>
@@ -838,7 +495,6 @@
         </div>
         <div class="section-num">08</div>
       </div>
-
       <div class="upload-grid-2">
         <div class="upload-box" id="upload-proserve">
           <input type="file" id="file-proserve" name="file_proserve" accept=".pdf,.jpg,.jpeg,.png"
@@ -884,7 +540,7 @@
   </form>
 
 </div>
-  
+
 <!-- LOADING OVERLAY -->
 <div class="loading-overlay" id="loading-overlay">
   <div class="loading-box">
@@ -893,7 +549,7 @@
     <p class="loading-sub">This could take up to 1 minute!</p>
   </div>
 </div>
-  
+
 <!-- CONFIRMATION MODAL -->
 <div class="modal-overlay" id="modal-overlay">
   <div class="modal-box">
@@ -913,9 +569,8 @@
 </div>
 
 <script>
-  const WEBHOOK_URL = 'https://mdrakon.app.n8n.cloud/webhook/boris-onboarding'
+  const WEBHOOK_URL = 'https://mdrakon.app.n8n.cloud/webhook/boris-onboarding';
 
-  // ── File upload handler ──────────────────────────────────────────────────────
   function handleFile(input, boxId, nameId, errorId) {
     const box   = document.getElementById(boxId);
     const label = document.getElementById(nameId);
@@ -927,14 +582,12 @@
       box.classList.remove('has-file');
       label.textContent = 'Tap to upload';
     }
-    // Clear group error when any file in the group is added
     if (errorId) {
       const err = document.getElementById(errorId);
       if (err) err.classList.remove('visible');
     }
   }
 
-  // ── Text field validation ────────────────────────────────────────────────────
   function validateField(id, condition) {
     const field = document.getElementById('field-' + id);
     if (!field) return true;
@@ -948,7 +601,6 @@
     return el ? el.value.trim() : '';
   }
 
-  // ── Upload required check ────────────────────────────────────────────────────
   function requireUpload(fileId, errorId) {
     const input = document.getElementById(fileId);
     const err   = document.getElementById(errorId);
@@ -964,21 +616,18 @@
     return true;
   }
 
-  // ── Form submit ──────────────────────────────────────────────────────────────
   document.getElementById('main-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     let valid = true;
 
-    // Text fields
-    valid = validateField('firstName', val('firstName') !== '')                            && valid;
-    valid = validateField('lastName',  val('lastName')  !== '')                            && valid;
-    valid = validateField('email',     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email')))  && valid;
-    valid = validateField('phone',     val('phone') !== '')                                && valid;
-    valid = validateField('ssiaNum',   val('ssiaNum') !== '')                              && valid;
-    valid = validateField('ssiaExpiry',val('ssiaExpiry') !== '')                           && valid;
+    valid = validateField('firstName', val('firstName') !== '')                           && valid;
+    valid = validateField('lastName',  val('lastName')  !== '')                           && valid;
+    valid = validateField('email',     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email'))) && valid;
+    valid = validateField('phone',     val('phone') !== '')                               && valid;
+    valid = validateField('ssiaNum',   val('ssiaNum') !== '')                             && valid;
+    valid = validateField('ssiaExpiry',val('ssiaExpiry') !== '')                          && valid;
 
-    // Required uploads
     const ssiaFront = requireUpload('file-ssia-front', 'group-ssia-error');
     const ssiaBack  = requireUpload('file-ssia-back',  'group-ssia-error');
     if (!ssiaFront || !ssiaBack) {
@@ -986,18 +635,23 @@
       valid = false;
     }
 
-    if (!requireUpload('file-emp-data',        'err-emp-data'))        valid = false;
-    if (!requireUpload('file-direct-deposit',  'err-direct-deposit'))  valid = false;
-    if (!requireUpload('file-conduct',         'err-conduct'))         valid = false;
-    if (!requireUpload('file-td1ab-front',     'err-td1ab'))           valid = false;
-    if (!requireUpload('file-td1-front',       'err-td1'))             valid = false;
+    if (!requireUpload('file-emp-data',       'err-emp-data'))       valid = false;
+    if (!requireUpload('file-direct-deposit', 'err-direct-deposit')) valid = false;
+    if (!requireUpload('file-conduct',        'err-conduct'))        valid = false;
+    if (!requireUpload('file-td1ab-front',    'err-td1ab'))          valid = false;
+    if (!requireUpload('file-td1-front',      'err-td1'))            valid = false;
 
     if (!valid) {
-      // Scroll to first error
       const firstErr = document.querySelector('.field.invalid, .upload-required-error, .upload-group-error.visible');
       if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
+
+    // Show loading screen immediately
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>Submitting…';
+    document.getElementById('loading-overlay').classList.add('visible');
 
     // Build FormData
     const fd = new FormData();
@@ -1026,10 +680,6 @@
       }
     });
 
-      btn.disabled = true;
-      btn.innerHTML = '<span class="spinner"></span>Submitting…';
-      document.getElementById('loading-overlay').classList.add('visible');
-
     try {
       const res = await fetch(WEBHOOK_URL, { method: 'POST', body: fd });
       if (!res.ok) throw new Error('Bad response');
@@ -1037,6 +687,7 @@
       document.getElementById('modal-overlay').classList.add('visible');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
+      document.getElementById('loading-overlay').classList.remove('visible');
       btn.disabled = false;
       btn.innerHTML = 'Submit My Paperwork!';
       alert('Something went wrong. Please try again or contact your supervisor.');
@@ -1044,7 +695,6 @@
     }
   });
 
-  // Clear invalid on input
   document.querySelectorAll('input').forEach(el => {
     el.addEventListener('input', () => {
       const field = el.closest('.field');
