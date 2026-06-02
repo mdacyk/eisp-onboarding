@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Onboarding Form — Edmonton International Street Performers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #f0eef8;
+      --surface:      #ffffff;
+      --surface-alt:  #f8f6ff;
+      --purple:       #3b2a6e;
+      --purple-mid:   #5540a0;
+      --purple-light: #7c6bbf;
+      --purple-pale:  #ede9ff;
+      --purple-border:#c8bfef;
+      --accent:       #6c4fd4;
+      --text:         #1e1530;
+      --text-mid:     #4a3f6b;
+      --text-soft:    #8a7db0;
+      --error:        #c0392b;
+      --success:      #2d7d5f;
+      --border:       #d5cff0;
+      --shadow:       0 2px 12px rgba(59,42,110,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(108,79,212,0.08) 0%, transparent 65%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='0.8' fill='%235540a015'/%3E%3C/svg%3E");
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 52px 24px 100px;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      margin-bottom: 52px;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .logo-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .logo-badge {
+      width: 46px;
+      height: 46px;
+      background: var(--purple);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      color: #fff;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(59,42,110,0.3);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .org-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(22px, 4.5vw, 36px);
+      letter-spacing: 3px;
+      color: var(--purple);
+      line-height: 1;
+    }
+
+    .form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 7vw, 60px);
+      letter-spacing: 4px;
+      color: var(--purple-mid);
+      line-height: 1;
+      margin-top: 6px;
+    }
+
+    .divider {
+      width: 64px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 18px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── SECTION CARDS ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.55s ease both;
+    }
+
+    .section:nth-child(1) { animation-delay: 0.05s; }
+    .section:nth-child(2) { animation-delay: 0.10s; }
+    .section:nth-child(3) { animation-delay: 0.15s; }
+    .section:nth-child(4) { animation-delay: 0.20s; }
+    .section:nth-child(5) { animation-delay: 0.25s; }
+    .section:nth-child(6) { animation-delay: 0.30s; }
+    .section:nth-child(7) { animation-delay: 0.35s; }
+    .section:nth-child(8) { animation-delay: 0.40s; }
+    .section:nth-child(9) { animation-delay: 0.45s; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--purple-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 2.5px;
+      color: var(--purple);
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 2px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .section-num {
+      margin-left: auto;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--purple-border);
+      letter-spacing: 1px;
+    }
+
+    /* ── GRIDS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    @media (max-width: 560px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .section { padding: 22px 18px 20px; }
+    }
+
+    /* ── FIELDS ── */
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .mb16  { margin-bottom: 16px; }
+
+    label {
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+
+    label .req { color: var(--accent); margin-left: 2px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"] {
+      background: var(--surface-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(108,79,212,0.12);
+    }
+
+    input::placeholder { color: var(--text-soft); opacity: 0.7; }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0.5;
+      cursor: pointer;
+      filter: invert(0.3) sepia(1) saturate(3) hue-rotate(230deg);
+    }
+
+    /* ── FIELD ERRORS ── */
+    .field-error {
+      font-size: 11px;
+      color: var(--error);
+      margin-top: 1px;
+      display: none;
+      font-weight: 500;
+    }
+
+    .field.invalid input { border-color: var(--error); background: #fff5f5; }
+    .field.invalid .field-error { display: block; }
+
+    /* ── UPLOAD BOX ERRORS ── */
+    .upload-box.upload-required-error .upload-label {
+      border-color: var(--error);
+      background: #fff5f5;
+    }
+
+    .upload-error-msg {
+      font-size: 11px;
+      color: var(--error);
+      font-weight: 500;
+      margin-top: 6px;
+      display: none;
+      text-align: center;
+    }
+
+    .upload-box.upload-required-error + .upload-error-msg,
+    .upload-required-error ~ .upload-error-msg {
+      display: block;
+    }
+
+    .upload-group-error {
+      font-size: 11px;
+      color: var(--error);
+      font-weight: 500;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .upload-group-error.visible { display: block; }
+
+    /* ── UPLOAD BOXES ── */
+    .upload-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .upload-grid-1 { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+    @media (max-width: 480px) { .upload-grid-2 { grid-template-columns: 1fr; } }
+
+    .upload-box { position: relative; }
+
+    .upload-box input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .upload-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: 1.5px dashed var(--purple-border);
+      border-radius: 10px;
+      padding: 22px 14px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      min-height: 100px;
+      background: var(--surface-alt);
+      position: relative;
+      z-index: 1;
+    }
+
+    .upload-box:hover .upload-label {
+      border-color: var(--accent);
+      background: var(--purple-pale);
+    }
+
+    .upload-box.has-file .upload-label {
+      border-color: var(--success);
+      background: #f0faf5;
+      border-style: solid;
+    }
+
+    .upload-label .upload-icon { font-size: 24px; }
+    .upload-label .upload-tag {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+    .upload-label .upload-sub { font-size: 10px; color: var(--text-soft); }
+    .upload-label .upload-filename { font-size: 11px; color: var(--success); word-break: break-all; font-weight: 500; }
+    .upload-box.has-file .upload-icon { display: none; }
+    .upload-box.has-file .check-icon { display: inline; }
+    .check-icon { display: none; font-size: 22px; }
+
+    /* ── INFO NOTE ── */
+    .info-note {
+      background: var(--purple-pale);
+      border: 1px solid var(--purple-border);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-size: 12px;
+      color: var(--text-mid);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .info-note strong { color: var(--purple); font-weight: 600; }
+
+    /* ── SUBMIT ── */
+    .submit-area {
+      margin-top: 36px;
+      text-align: center;
+      animation: fadeUp 0.6s 0.5s ease both;
+    }
+
+    .btn-submit {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      padding: 18px 64px;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(59,42,110,0.3);
+    }
+
+    .btn-submit:hover {
+      background: var(--purple-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(59,42,110,0.35);
+    }
+
+    .btn-submit:active  { transform: translateY(0); }
+    .btn-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    /* ── CONFIRMATION MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 21, 48, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .modal-overlay.visible { display: flex; }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 44px 36px 36px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 64px rgba(59,42,110,0.22);
+      animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    .modal-check {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 24px rgba(59,42,110,0.28);
+    }
+
+    .modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 3px;
+      color: var(--purple);
+      margin-bottom: 14px;
+    }
+
+    .modal-body {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .modal-body strong { color: var(--purple); }
+
+    .modal-contacts {
+      background: var(--purple-pale);
+      border: 1px solid var(--purple-border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .modal-contacts .contact-label {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .modal-contacts a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .modal-close {
+      background: var(--purple);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      letter-spacing: 2px;
+      padding: 13px 40px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover { background: var(--purple-mid); }
+
+    /* ── SPINNER ── */
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.88); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-line">
+      <div class="logo-badge">EISP</div>
+      <div>
+        <div class="org-name">Edmonton International Street Performers</div>
+      </div>
+      <div class="logo-badge">EISP</div>
+    </div>
+    <div class="form-title">Onboarding Form</div>
+    <div class="divider"></div>
+  </div>
+
+  <!-- MAIN FORM -->
+  <form id="main-form" novalidate>
+
+    <!-- 01  PERSONAL INFORMATION -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">👤</div>
+        <div>
+          <div class="section-title">Personal Information</div>
+          <div class="section-desc">Your name and contact details.</div>
+        </div>
+        <div class="section-num">01</div>
+      </div>
+
+      <div class="grid-2 mb16">
+        <div class="field" id="field-firstName">
+          <label>First Name <span class="req">*</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="Jane" autocomplete="given-name"/>
+          <span class="field-error">First name is required</span>
+        </div>
+        <div class="field" id="field-lastName">
+          <label>Last Name <span class="req">*</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="Smith" autocomplete="family-name"/>
+          <span class="field-error">Last name is required</span>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="field" id="field-email">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="jane@email.com" autocomplete="email"/>
+          <span class="field-error">Valid email is required</span>
+        </div>
+        <div class="field" id="field-phone">
+          <label>Phone Number <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="780-555-0123" autocomplete="tel"/>
+          <span class="field-error">Phone number is required</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02  SECURITY LICENSE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🪪</div>
+        <div>
+          <div class="section-title">Security License</div>
+          <div class="section-desc">Enter your license number and expiry, then upload a photo of both sides.</div>
+        </div>
+        <div class="section-num">02</div>
+      </div>
+
+      <div class="grid-2 mb16">
+        <div class="field" id="field-ssiaNum">
+          <label>Security License # <span class="req">*</span></label>
+          <input type="text" id="ssiaNum" name="ssiaNum" placeholder="e.g. W082343"/>
+          <span class="field-error">Security license number is required</span>
+        </div>
+        <div class="field" id="field-ssiaExpiry">
+          <label>License Expiry Date <span class="req">*</span></label>
+          <input type="date" id="ssiaExpiry" name="ssiaExpiry"/>
+          <span class="field-error">Expiry date is required</span>
+        </div>
+      </div>
+
+      <div class="info-note">
+        📸 <strong>Tip:</strong> Lay your license flat on a light surface and take a clear, well-lit photo. Both sides must be fully visible and readable. Accepted: JPG, PNG, PDF (max 10 MB each).
+      </div>
+      <div class="upload-grid-2" id="group-ssia">
+        <div class="upload-box" id="upload-ssia-front">
+          <input type="file" id="file-ssia-front" name="file_ssia_front" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-ssia-front','name-ssia-front','group-ssia-error')"/>
+          <div class="upload-label">
+            <span class="upload-icon">🪪</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">License — Front <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-ssia-front">Tap to upload</span>
+          </div>
+        </div>
+        <div class="upload-box" id="upload-ssia-back">
+          <input type="file" id="file-ssia-back" name="file_ssia_back" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-ssia-back','name-ssia-back','group-ssia-error')"/>
+          <div class="upload-label">
+            <span class="upload-icon">🔄</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">License — Back <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-ssia-back">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+      <div class="upload-group-error" id="group-ssia-error">Both front and back license photos are required</div>
+    </div>
+
+    <!-- 03  EMPLOYEE DATA SHEET -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <div>
+          <div class="section-title">Employee Data Sheet</div>
+          <div class="section-desc">Complete the form provided to you, then upload it here.</div>
+        </div>
+        <div class="section-num">03</div>
+      </div>
+
+      <div class="info-note">
+        📄 <strong>How to submit:</strong> Fill out the Employee Data Sheet you were provided (paper or PDF), sign it, and upload a clear photo or scanned copy below. Accepted: JPG, PNG, PDF (max 10 MB).
+      </div>
+      <div class="upload-grid-1">
+        <div class="upload-box" id="upload-emp-data">
+          <input type="file" id="file-emp-data" name="file_emp_data" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-emp-data','name-emp-data','err-emp-data')"/>
+          <div class="upload-label">
+            <span class="upload-icon">📝</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">Employee Data Sheet — Signed Copy <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-emp-data">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+      <div class="upload-group-error" id="err-emp-data">Employee Data Sheet is required</div>
+    </div>
+
+    <!-- 04  DIRECT DEPOSIT -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🏦</div>
+        <div>
+          <div class="section-title">Direct Deposit Information</div>
+          <div class="section-desc">Upload ONE of the three accepted documents.</div>
+        </div>
+        <div class="section-num">04</div>
+      </div>
+
+      <div class="info-note">
+        💳 <strong>Upload ONE of the following:</strong> a void cheque, your bank's direct deposit form, or the employee direct deposit form provided to you. Any one of the three is accepted. Accepted formats: JPG, PNG, PDF (max 10 MB).
+      </div>
+      <div class="upload-grid-1">
+        <div class="upload-box" id="upload-direct-deposit">
+          <input type="file" id="file-direct-deposit" name="file_direct_deposit" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-direct-deposit','name-direct-deposit','err-direct-deposit')"/>
+          <div class="upload-label">
+            <span class="upload-icon">🏦</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">Void Cheque / Bank Form / DD Form <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">Upload any one — JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-direct-deposit">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+      <div class="upload-group-error" id="err-direct-deposit">Direct deposit document is required</div>
+    </div>
+
+    <!-- 05  CODE OF CONDUCT -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">✍️</div>
+        <div>
+          <div class="section-title">Code of Conduct</div>
+          <div class="section-desc">Sign the form provided to you and upload your signed copy.</div>
+        </div>
+        <div class="section-num">05</div>
+      </div>
+
+      <div class="info-note">
+        ✍️ <strong>Sign and upload:</strong> Review the Code of Conduct provided to you, sign it, and upload a clear photo or scanned copy below. Accepted: JPG, PNG, PDF (max 10 MB).
+      </div>
+      <div class="upload-grid-1">
+        <div class="upload-box" id="upload-conduct">
+          <input type="file" id="file-conduct" name="file_conduct" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-conduct','name-conduct','err-conduct')"/>
+          <div class="upload-label">
+            <span class="upload-icon">✍️</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">Code of Conduct — Signed Copy <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-conduct">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+      <div class="upload-group-error" id="err-conduct">Signed Code of Conduct is required</div>
+    </div>
+
+    <!-- 06  TD1AB -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🏛️</div>
+        <div>
+          <div class="section-title">TD1AB — Provincial Tax Form</div>
+          <div class="section-desc">Alberta provincial personal tax credits return.</div>
+        </div>
+        <div class="section-num">06</div>
+      </div>
+
+      <div class="info-note">
+        📸 <strong>Photo tip:</strong> If submitting photos of your paper form, upload the <strong>front</strong> and <strong>back</strong> separately below. If you have a completed PDF, upload it in the Front slot — one file is enough. Accepted: JPG, PNG, PDF (max 10 MB per file).
+      </div>
+      <div class="upload-grid-2" id="group-td1ab">
+        <div class="upload-box" id="upload-td1ab-front">
+          <input type="file" id="file-td1ab-front" name="file_td1ab_front" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-td1ab-front','name-td1ab-front','err-td1ab')"/>
+          <div class="upload-label">
+            <span class="upload-icon">📄</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">TD1AB — Front / Page 1 <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-td1ab-front">Tap to upload</span>
+          </div>
+        </div>
+        <div class="upload-box" id="upload-td1ab-back">
+          <input type="file" id="file-td1ab-back" name="file_td1ab_back" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-td1ab-back','name-td1ab-back','err-td1ab')"/>
+          <div class="upload-label">
+            <span class="upload-icon">📄</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">TD1AB — Back / Page 2</span>
+            <span class="upload-sub">Optional if PDF uploaded above</span>
+            <span class="upload-filename" id="name-td1ab-back">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+      <div class="upload-group-error" id="err-td1ab">TD1AB front / Page 1 is required</div>
+    </div>
+
+    <!-- 07  TD1 FEDERAL -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🇨🇦</div>
+        <div>
+          <div class="section-title">TD1 — Federal Tax Form</div>
+          <div class="section-desc">Federal personal tax credits return (Canada Revenue Agency).</div>
+        </div>
+        <div class="section-num">07</div>
+      </div>
+
+      <div class="info-note">
+        📸 <strong>Photo tip:</strong> If submitting photos of your paper form, upload the <strong>front</strong> and <strong>back</strong> separately below. If you have a completed PDF, upload it in the Front slot — one file is enough. Accepted: JPG, PNG, PDF (max 10 MB per file).
+      </div>
+      <div class="upload-grid-2">
+        <div class="upload-box" id="upload-td1-front">
+          <input type="file" id="file-td1-front" name="file_td1_front" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-td1-front','name-td1-front','err-td1')"/>
+          <div class="upload-label">
+            <span class="upload-icon">📄</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">TD1 Federal — Front / Page 1 <span style="color:var(--accent)">*</span></span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-td1-front">Tap to upload</span>
+          </div>
+        </div>
+        <div class="upload-box" id="upload-td1-back">
+          <input type="file" id="file-td1-back" name="file_td1_back" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-td1-back','name-td1-back','err-td1')"/>
+          <div class="upload-label">
+            <span class="upload-icon">📄</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">TD1 Federal — Back / Page 2</span>
+            <span class="upload-sub">Optional if PDF uploaded above</span>
+            <span class="upload-filename" id="name-td1-back">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+      <div class="upload-group-error" id="err-td1">TD1 Federal front / Page 1 is required</div>
+    </div>
+
+    <!-- 08  ADDITIONAL CERTIFICATIONS (optional) -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🏅</div>
+        <div>
+          <div class="section-title">Additional Certifications</div>
+          <div class="section-desc">Optional — upload ProServe, ProTect, or First Aid certificates if you have them.</div>
+        </div>
+        <div class="section-num">08</div>
+      </div>
+
+      <div class="upload-grid-2">
+        <div class="upload-box" id="upload-proserve">
+          <input type="file" id="file-proserve" name="file_proserve" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-proserve','name-proserve',null)"/>
+          <div class="upload-label">
+            <span class="upload-icon">🍺</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">ProServe Certificate</span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-proserve">Tap to upload</span>
+          </div>
+        </div>
+        <div class="upload-box" id="upload-protect">
+          <input type="file" id="file-protect" name="file_protect" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-protect','name-protect',null)"/>
+          <div class="upload-label">
+            <span class="upload-icon">🛡️</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">ProTect Certificate</span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-protect">Tap to upload</span>
+          </div>
+        </div>
+        <div class="upload-box" id="upload-firstaid">
+          <input type="file" id="file-firstaid" name="file_firstaid" accept=".pdf,.jpg,.jpeg,.png"
+            onchange="handleFile(this,'upload-firstaid','name-firstaid',null)"/>
+          <div class="upload-label">
+            <span class="upload-icon">🚑</span>
+            <span class="check-icon">✅</span>
+            <span class="upload-tag">First Aid Certificate</span>
+            <span class="upload-sub">JPG, PNG, or PDF</span>
+            <span class="upload-filename" id="name-firstaid">Tap to upload</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-area">
+      <button type="submit" class="btn-submit" id="submitBtn">Submit My Paperwork!</button>
+    </div>
+
+  </form>
+
+</div>
+
+<!-- CONFIRMATION MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-check">✓</div>
+    <div class="modal-title">You're All Set!</div>
+    <div class="modal-body">
+      Your onboarding paperwork has been received successfully.<br><br>
+      <strong>Please do not fill this form out again.</strong> Your submission is on file and your documents are being reviewed.
+    </div>
+    <div class="modal-contacts">
+      <div class="contact-label">Need to update your info or send new documents?</div>
+      Email <strong>Marcus</strong> or <strong>Marian</strong> directly —<br>
+      do not resubmit this form.
+    </div>
+    <button class="modal-close" onclick="document.getElementById('modal-overlay').classList.remove('visible')">Got It — Thanks!</button>
+  </div>
+</div>
+
+<script>
+  const WEBHOOK_URL = 'https://your-n8n-instance.com/webhook/boris-onboarding';
+
+  // ── File upload handler ──────────────────────────────────────────────────────
+  function handleFile(input, boxId, nameId, errorId) {
+    const box   = document.getElementById(boxId);
+    const label = document.getElementById(nameId);
+    if (input.files && input.files[0]) {
+      box.classList.add('has-file');
+      box.classList.remove('upload-required-error');
+      label.textContent = '✔ ' + input.files[0].name;
+    } else {
+      box.classList.remove('has-file');
+      label.textContent = 'Tap to upload';
+    }
+    // Clear group error when any file in the group is added
+    if (errorId) {
+      const err = document.getElementById(errorId);
+      if (err) err.classList.remove('visible');
+    }
+  }
+
+  // ── Text field validation ────────────────────────────────────────────────────
+  function validateField(id, condition) {
+    const field = document.getElementById('field-' + id);
+    if (!field) return true;
+    if (!condition) { field.classList.add('invalid'); return false; }
+    field.classList.remove('invalid');
+    return true;
+  }
+
+  function val(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  // ── Upload required check ────────────────────────────────────────────────────
+  function requireUpload(fileId, errorId) {
+    const input = document.getElementById(fileId);
+    const err   = document.getElementById(errorId);
+    const box   = document.getElementById('upload-' + fileId.replace('file-',''));
+    const hasFile = input && input.files && input.files[0];
+    if (!hasFile) {
+      if (err) err.classList.add('visible');
+      if (box) box.classList.add('upload-required-error');
+      return false;
+    }
+    if (err) err.classList.remove('visible');
+    if (box) box.classList.remove('upload-required-error');
+    return true;
+  }
+
+  // ── Form submit ──────────────────────────────────────────────────────────────
+  document.getElementById('main-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    // Text fields
+    valid = validateField('firstName', val('firstName') !== '')                            && valid;
+    valid = validateField('lastName',  val('lastName')  !== '')                            && valid;
+    valid = validateField('email',     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email')))  && valid;
+    valid = validateField('phone',     val('phone') !== '')                                && valid;
+    valid = validateField('ssiaNum',   val('ssiaNum') !== '')                              && valid;
+    valid = validateField('ssiaExpiry',val('ssiaExpiry') !== '')                           && valid;
+
+    // Required uploads
+    const ssiaFront = requireUpload('file-ssia-front', 'group-ssia-error');
+    const ssiaBack  = requireUpload('file-ssia-back',  'group-ssia-error');
+    if (!ssiaFront || !ssiaBack) {
+      document.getElementById('group-ssia-error').classList.add('visible');
+      valid = false;
+    }
+
+    if (!requireUpload('file-emp-data',        'err-emp-data'))        valid = false;
+    if (!requireUpload('file-direct-deposit',  'err-direct-deposit'))  valid = false;
+    if (!requireUpload('file-conduct',         'err-conduct'))         valid = false;
+    if (!requireUpload('file-td1ab-front',     'err-td1ab'))           valid = false;
+    if (!requireUpload('file-td1-front',       'err-td1'))             valid = false;
+
+    if (!valid) {
+      // Scroll to first error
+      const firstErr = document.querySelector('.field.invalid, .upload-required-error, .upload-group-error.visible');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // Build FormData
+    const fd = new FormData();
+    fd.append('firstName',   val('firstName'));
+    fd.append('lastName',    val('lastName'));
+    fd.append('email',       val('email'));
+    fd.append('phone',       val('phone'));
+    fd.append('ssiaNum',     val('ssiaNum'));
+    fd.append('ssiaExpiry',  val('ssiaExpiry'));
+    fd.append('submittedAt', new Date().toISOString());
+
+    const allFiles = [
+      'ssia-front','ssia-back',
+      'emp-data',
+      'direct-deposit',
+      'conduct',
+      'td1ab-front','td1ab-back',
+      'td1-front','td1-back',
+      'proserve','protect','firstaid'
+    ];
+
+    allFiles.forEach(key => {
+      const inp = document.getElementById('file-' + key);
+      if (inp && inp.files[0]) {
+        fd.append('file_' + key.replace(/-/g,'_'), inp.files[0], inp.files[0].name);
+      }
+    });
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner"></span>Submitting…';
+
+    try {
+      const res = await fetch(WEBHOOK_URL, { method: 'POST', body: fd });
+      if (!res.ok) throw new Error('Bad response');
+      document.getElementById('modal-overlay').classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = 'Submit My Paperwork!';
+      alert('Something went wrong. Please try again or contact your supervisor.');
+      console.error(err);
+    }
+  });
+
+  // Clear invalid on input
+  document.querySelectorAll('input').forEach(el => {
+    el.addEventListener('input', () => {
+      const field = el.closest('.field');
+      if (field) field.classList.remove('invalid');
+    });
+  });
+</script>
+</body>
+</html>
