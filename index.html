@@ -685,6 +685,11 @@
       if (!res.ok) throw new Error('Bad response');
       document.getElementById('loading-overlay').classList.remove('visible');
       document.getElementById('modal-overlay').classList.add('visible');
+      document.getElementById('main-form').reset();
+      document.querySelectorAll('.upload-box').forEach(box => box.classList.remove('has-file'));
+      document.querySelectorAll('.upload-filename').forEach(el => el.textContent = 'Tap to upload');
+      btn.disabled = false;
+      btn.innerHTML = 'Submit My Paperwork!';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       document.getElementById('loading-overlay').classList.remove('visible');
